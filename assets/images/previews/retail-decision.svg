@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="430" viewBox="0 0 600 430" role="img" aria-labelledby="retail-decision-title retail-decision-desc">
+  <title id="retail-decision-title">Supermarket site comparison: demand and walking access</title>
+  <desc id="retail-decision-desc">For a 280-square-metre store, Emerson Park has 1,383.83 modelled weekly trips, displayed as 1,384, compared with 1,243.4, displayed as 1,243, near Elm Park. Estimated residents within the original 15-minute walking threshold are 4,517 at Emerson Park and 6,589 near Elm Park. Each chart has a separate zero-based scale. Walking counts assign whole output-area populations to reachable, network-snapped centroids at 80 metres per minute, not individual addresses. The demand model redistributes fixed origin demand and does not estimate revenue, profitability or newly created trips. Values reproduce saved coursework results.</desc>
+  <rect width="600" height="430" fill="#f2ece1"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#203a43">
+    <text x="32" y="38" font-size="26" font-weight="700">Demand and walking access</text>
+    <text x="32" y="63" font-size="16" fill="#58666a">Havering · 280 m² store</text>
+
+    <circle cx="44" cy="94" r="12" fill="#203a43"/>
+    <text x="44" y="100" text-anchor="middle" font-size="16" font-weight="700" fill="#f8f7f3">A</text>
+    <text x="65" y="100" font-size="18">Emerson Park</text>
+    <circle cx="319" cy="94" r="12" fill="#9b5a38"/>
+    <text x="319" y="100" text-anchor="middle" font-size="16" font-weight="700" fill="#f8f7f3">B</text>
+    <text x="340" y="100" font-size="18">Near Elm Park</text>
+    <path d="M32 116H568" stroke="#c7c1b6" fill="none"/>
+
+    <text x="32" y="146" font-size="20" font-weight="700">Modelled weekly trips</text>
+    <g aria-label="Emerson Park: 1,384 modelled weekly trips">
+      <text x="37" y="180" font-size="16" font-weight="700">A</text>
+      <rect x="64" y="163" width="416" height="20" fill="#ded8cc"/>
+      <rect x="64" y="163" width="383.782187" height="20" fill="#203a43" data-site="A" data-measure="weekly-trips" data-value="1383.83"/>
+      <text x="568" y="182" text-anchor="end" font-size="25" font-weight="700">1,384</text>
+    </g>
+    <g aria-label="Near Elm Park: 1,243 modelled weekly trips">
+      <text x="37" y="214" font-size="16" font-weight="700" fill="#9b5a38">B</text>
+      <rect x="64" y="197" width="416" height="20" fill="#ded8cc"/>
+      <rect x="64" y="197" width="344.836267" height="20" fill="#9b5a38" data-site="B" data-measure="weekly-trips" data-value="1243.4"/>
+      <text x="568" y="216" text-anchor="end" font-size="25" font-weight="700" fill="#9b5a38">1,243</text>
+    </g>
+    <path d="M64 228H480M64 228V233M272 228V233M480 228V233" stroke="#9a9f96" fill="none"/>
+    <g font-size="14" fill="#58666a">
+      <text x="64" y="250">0</text><text x="272" y="250" text-anchor="middle">750</text><text x="480" y="250" text-anchor="end">1,500</text>
+    </g>
+
+    <text x="32" y="284" font-size="20" font-weight="700">Residents within a 15-minute walk*</text>
+    <g aria-label="Emerson Park: 4,517 residents assigned to reachable area centroids">
+      <text x="37" y="318" font-size="16" font-weight="700">A</text>
+      <rect x="64" y="301" width="416" height="20" fill="#ded8cc"/>
+      <rect x="64" y="301" width="268.438857" height="20" fill="#203a43" data-site="A" data-measure="walking-residents" data-value="4517"/>
+      <text x="568" y="320" text-anchor="end" font-size="25" font-weight="700">4,517</text>
+    </g>
+    <g aria-label="Near Elm Park: 6,589 residents assigned to reachable area centroids">
+      <text x="37" y="352" font-size="16" font-weight="700" fill="#9b5a38">B</text>
+      <rect x="64" y="335" width="416" height="20" fill="#ded8cc"/>
+      <rect x="64" y="335" width="391.574857" height="20" fill="#9b5a38" data-site="B" data-measure="walking-residents" data-value="6589"/>
+      <text x="568" y="354" text-anchor="end" font-size="25" font-weight="700" fill="#9b5a38">6,589</text>
+    </g>
+    <path d="M64 366H480M64 366V371M272 366V371M480 366V371" stroke="#9a9f96" fill="none"/>
+    <g font-size="14" fill="#58666a">
+      <text x="64" y="388">0</text><text x="272" y="388" text-anchor="middle">3,500</text><text x="480" y="388" text-anchor="end">7,000</text>
+    </g>
+    <text x="32" y="416" font-size="14" fill="#58666a">* Whole-area populations assigned to reachable centroids.</text>
+  </g>
+</svg>

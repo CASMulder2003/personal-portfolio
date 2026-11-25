@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+.env
+.env.*
+content/
+tools/
+sources/
+output/
+outputs/
+qa/
+*.log
+assets/docs/

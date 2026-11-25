@@ -1,0 +1,65 @@
+{
+  "source_page": 48,
+  "job_budget_minutes": 90,
+  "value_type": "Lelylijn minus baseline change; raw index units unless display_conversion states otherwise",
+  "frames": [
+    {
+      "id": "F45",
+      "label": "Within reach of a proposed service point",
+      "short_label": "Service-access population",
+      "technical_label": "F45",
+      "description": "Existing-network access within 45 minutes to a proposed service point.",
+      "gini": -0.0188,
+      "theil": -0.0413,
+      "palma": -0.0348,
+      "concentration_index": -0.0043,
+      "fgt0": -0.0512,
+      "fgt1": -0.0351,
+      "fgt2": -0.0319,
+      "needs_gap": 0.0019
+    },
+    {
+      "id": "COROP5",
+      "label": "Five regions along the corridor",
+      "short_label": "Five-region population",
+      "technical_label": "Focused 5-COROP",
+      "description": "Groot-Amsterdam, Flevoland, Zuidoost-Friesland, Noord-Friesland and Overig Groningen.",
+      "gini": -0.0021,
+      "theil": -0.0061,
+      "palma": -0.0077,
+      "concentration_index": -0.0011,
+      "fgt0": -0.0107,
+      "fgt1": -0.0078,
+      "fgt2": -0.0072,
+      "needs_gap": 0.0021
+    },
+    {
+      "id": "COROP12",
+      "label": "The broader twelve-region study area",
+      "short_label": "Twelve-region population",
+      "technical_label": "Broad 12-COROP",
+      "description": "The full study population from Groot-Amsterdam through Flevoland to the northern Netherlands.",
+      "gini": -0.0013,
+      "theil": -0.0031,
+      "palma": -0.0034,
+      "concentration_index": -0.0007,
+      "fgt0": -0.005,
+      "fgt1": -0.0037,
+      "fgt2": -0.0034,
+      "needs_gap": 0.001
+    }
+  ],
+  "recommended_first_display": {
+    "field": "gini",
+    "title": "Change in inequality in job accessibility",
+    "axis_label": "Change in Gini index",
+    "note": "Negative values indicate more equal access. Compare frames using the same metric and axis scale. Do not label these as percentage reductions."
+  },
+  "optional_alternative": {
+    "field": "fgt0",
+    "title": "Change in the share below a fixed job-access benchmark",
+    "display_conversion": "Multiply raw values by 100 to display percentage-point changes: -5.12, -1.07 and -0.50 percentage points.",
+    "note": "The benchmark is the primary population's baseline median, 145,056 reachable jobs, held fixed across scenarios and frames. It is an analytical threshold, not a policy minimum."
+  },
+  "note": "The Gini, Theil, Palma, concentration index and FGT measures decline in all three frames, with smaller changes in broader populations. Relative needs-gap incidence rises slightly in all three. It is not valid to place all eight raw changes on one common importance ranking."
+}

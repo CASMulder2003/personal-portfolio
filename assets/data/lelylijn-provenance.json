@@ -1,0 +1,94 @@
+{
+  "title": "Lelylijn employment accessibility: web display export",
+  "created": "2026-11-18",
+  "crs": "EPSG:4326 (longitude, latitude)",
+  "thresholdsMinutes": [
+    30,
+    45,
+    60,
+    90,
+    120
+  ],
+  "schemas": {
+    "neighbourhoods": {
+      "code": "CBS2023 neighbourhood code",
+      "name": "CBS neighbourhood name",
+      "region": "COROP region name",
+      "baseline90": "Estimated jobs reachable within90 minutes, baseline network",
+      "scenario90": "Estimated jobs reachable within90 minutes, modelled Lelylijn network",
+      "gain90": "scenario90 minus baseline90; additional reachable jobs, not jobs created",
+      "gainPct90": "100*gain90/baseline90; null if denominator not positive",
+      "baseline": "Five raw job counts ordered as thresholdsMinutes",
+      "scenario": "Five raw job counts ordered as thresholdsMinutes",
+      "population": "Fixed neighbourhood population used in dissertation",
+      "stationMinutes": "Minimum baseline transit/walk travel_time_p50 to a modelled Lelylijn station; null where unavailable",
+      "f45": "Primary evaluation population: eligible and baseline stationMinutes<=45",
+      "focused5": "Eligible in five service-station COROP regions",
+      "eligible": "Finite positive population and finite90 minute accessibility for both networks"
+    }
+  },
+  "sources": {
+    "code": "R/07_dissertation_figures.qmd: final Figures4.1/4.2 and canonical Table4.5 construction",
+    "accessibility": "R/data/processed/accessibility_results_corrected.rds",
+    "neighbourhoods": "R/data/processed/study_buurten.gpkg",
+    "stationAccess": "R/data/processed/lely_station_access_baseline.rds",
+    "routes": "R/data/processed/lely_shapes_real.gpkg",
+    "stations": "R/data/processed/lely_stations.gpkg",
+    "country": "R/data/gebiedsindelingen/cbsgebiedsindelingen2023.gpkg: buurt_gegeneraliseerd union",
+    "publicRepository": "https://github.com/CASMulder2003/dissertation_lelylijn"
+  },
+  "transformations": ["Join by exact neighbourhood code", "Use original CBS-derived study neighbourhood geometry without additional polygon simplification; background from CBS neighbourhood union", "Neighbourhood and context coordinates converted to WGS84 at 9 decimal places; route retains 25m simplification and 5-decimal coordinates", "Preserve all existing feature property objects exactly, including accessibility arrays and flags", "No routing, scenario, accessibility or summary results recalculated"],
+  "counts": {
+    "mapFeatures": 5111,
+    "matchedAccessibility": 5108,
+    "missingAccessibility": 3,
+    "eligibleNeighbourhoods": 4912,
+    "f45Neighbourhoods": 400,
+    "zeroPopulation": 196,
+    "missingPopulation": 3
+  },
+  "frames": {
+    "primary": {
+      "neighbourhoods": 400,
+      "population": 588660,
+      "baselineMean": 365445.906074814,
+      "scenarioMean": 376512.674362111,
+      "meanGain": 11066.7682872966,
+      "populationShare": 0.0976849078427045,
+      "weightedGainShare": 0.953011159279774
+    },
+    "focused": {
+      "neighbourhoods": 2197,
+      "population": 2819230,
+      "baselineMean": 876303.210585869,
+      "scenarioMean": 878692.902067231,
+      "meanGain": 2389.69148136193,
+      "populationShare": 0.467835801205089,
+      "weightedGainShare": 0.98556435203765
+    },
+    "broad": {
+      "neighbourhoods": 4912,
+      "population": 6026110,
+      "baselineMean": 741949.88981615,
+      "scenarioMean": 743084.248243892,
+      "meanGain": 1134.35842774194,
+      "populationShare": 1,
+      "weightedGainShare": 1
+    }
+  },
+  "display": {
+    "gainScale": "Use logarithmic or clearly labelled discrete bins for positive gains; zero gain neutral; missing values distinct",
+    "baselineScale": "Use a shared scale for baseline and scenario; label logarithmic transformation if used",
+    "geometry": "Original CBS-generalised study boundaries, with no additional per-polygon simplification. Coordinates use 9 decimal places. This remains administrative display geometry, not cadastral detail.",
+    "mapData": "Map retains all5111 study geometries. Summary denominators use4912 eligible positive-population neighbourhoods; filters do not manufacture zeros for missing values."
+  },
+  "caveats": [
+    "Potential access to fixed estimated employment, not realised employment or economic-growth impact",
+    "F45 station access defines a population and is distinct from the30-120 minute job-accessibility budget",
+    "Modelled alignment is not a claim about an approved construction route",
+    "Neighbourhood raw job counts are rounded to nearest whole job in the dissertation's existing data",
+    "Old accessibility_pop.rds has different job values and is deliberately not used",
+    "Source geometry CBS2023; no individual-level or sensitive data included"
+  ],
+  "geometryUpdated": "2026-11-19"
+}
